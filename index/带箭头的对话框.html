@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个带箭头的对话框</title>
+    <style>
+       .demo{
+           margin-top: 50px;
+           width: 0;
+           height: 0;
+           border: 20px solid transparent;
+           border-color: blue green yellow red;
+       }
+       .demo1{
+           margin-top: 50px;
+           width: 0;
+           height: 0;
+           border: 20px solid transparent;
+           border-bottom-color: yellow;
+       }
+       .demo2{
+           margin-top: 50px;
+           position: relative;
+           width: 200px;
+           height: 100px;
+           background-color: blueviolet;
+       }
+       .demo2::before,.demo2::after{
+           content: '';
+           display: block;
+           position: absolute;
+           width: 0;
+           height: 0;
+       }
+       .demo2::before{
+           border: 20px solid transparent;
+           border-bottom-color: blueviolet;
+           left: 20%;
+           /* 元素此时的宽高都为40px */
+           top: -40px;
+       }
+       /* 盖住上面的实心箭头,可不用 */
+       /* .demo2::after{
+           border: 18px solid transparent;
+           border-bottom-color: #fff;
+           left: 21%;
+           top: -36px;
+       } */
+    </style>
+</head>
+
+<body>
+    <!-- 四个三角形组成的正方形 -->
+    <div class="demo"></div>
+    <!-- 一个三角形 -->
+    <div class="demo1"></div>
+    <!-- 带箭头的对话框 -->
+    <div class="demo2"></div>
+</body>
+
+</html>
